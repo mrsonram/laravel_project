@@ -8,6 +8,7 @@
 		<th>name</th>
 		<th>hours_per_week</th>
 		<th>grade</th>
+		<th>action</th>
 	</tr>
 	@foreach($table_student as $row)
 	<tr>

@@ -17,4 +17,26 @@ Route::get('/', function () {
 
 Route::get('/employee', 'EmployeeController@index');
 
+Route::get('/employee/create', 'EmployeeController@create');
+
+Route::post('/employee', 'EmployeeController@store');
+
+Route::get('/employee/{id}', 'EmployeeController@show');
+
+Route::get('/employee/{id}/edit', 'EmployeeController@edit');
+
+Route::put('/employee/{id}', 'EmployeeController@update');
+
+Route::delete('/employee/{id}', 'EmployeeController@destroy');
+
 Route::get('/student', 'StudentController@index');
+
+Route::get('student/create', 'StudentController@create');
+
+Route::post('/student', 'StudentController@store');
+
+Route::get('/student/{id}', 'StudentController@show');
+
+Route::get('/student/{id}/edit', 'StudentController@edit');
+
+Route::put('/student/{id}', 'StudentController@update');
