@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\EmployeeModel;
-use App\PositionModel;
 
 class EmployeeController extends Controller
 {
@@ -39,10 +38,8 @@ class EmployeeController extends Controller
 
     public function edit($id) {
         $table_employee = EmployeeModel::select_by_id($id);
-        $table_position = PositionModel::select_all();
         $data = [
-        'table_employee' => $table_employee ,
-        'table_position' => $table_position
+        'table_employee' => $table_employee
         ];
     return view('employee/edit',$data);
     }
