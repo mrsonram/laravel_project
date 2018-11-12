@@ -6,7 +6,13 @@ use Illuminate\Http\Request;
 use App\EmployeeModel;
 
 class EmployeeController extends Controller
+
 {
+    public function __construct() {
+    $this->middleware('auth');
+    $this->middleware('role:account') ;
+    }
+
     public function index() {
         $table_employee = EmployeeModel::select_all();
         $data = ["table_employee" => $table_employee];

@@ -76,6 +76,20 @@ Route::get('/profile/create', 'ProfileController@create');
 
 Route::get('/profile/{id}', 'ProfileController@show');
 
+/*
+|--------------------------------------------------------------------------
+| Using Model Basics
+|--------------------------------------------------------------------------
+*/
+
+Route::get('/profile', 'ProfileController@index');
+
+/*
+|--------------------------------------------------------------------------
+| Laravel CRUD : Read from database
+|--------------------------------------------------------------------------
+*/
+
 Route::get('/employee', 'EmployeeController@index');
 
 Route::get('/employee/create', 'EmployeeController@create');
@@ -89,6 +103,12 @@ Route::get('/employee/{id}/edit', 'EmployeeController@edit');
 Route::put('/employee/{id}', 'EmployeeController@update');
 
 Route::delete('/employee/{id}', 'EmployeeController@destroy');
+
+/*
+|--------------------------------------------------------------------------
+| Case Study : Student
+|--------------------------------------------------------------------------
+*/
 
 Route::get('/student', 'StudentController@index');
 
@@ -104,7 +124,7 @@ Route::put('/student/{id}', 'StudentController@update');
 
 /*
 |--------------------------------------------------------------------------
-| Midterm
+| Midterm Exam : Product Table
 |--------------------------------------------------------------------------
 */
 
@@ -131,3 +151,6 @@ Route::delete('/product/{id}', 'ProductController@destroy');
 Route::get('/bootstrap', function () {
     return view('bootstrap/index');
 });    
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
