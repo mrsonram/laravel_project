@@ -19,9 +19,9 @@ class StudentModel extends Model
         }
 
     public static function insert($name, $hours_per_week, $grade) {
-        $sql = "INSERT INTO tb_student (name, hours_per_week, grade,)
+        $sql = "INSERT INTO tb_student (name, hours_per_week, grade)
         VALUES ('{$name}', {$hours_per_week}, '{$grade}')";
-    DB::insert($sql, []); //NO NEED TO RETURN
+        DB::insert($sql, []); //NO NEED TO RETURN
     }
     
     public static function update_by_id($name, $hours_per_week, $grade) {

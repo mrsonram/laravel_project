@@ -8,7 +8,7 @@ use App\StudentModel;
 class StudentController extends Controller
 {
     public function index () {
-        $table_student = studentModel::select_all ();
+        $table_student = StudentModel::select_all ();
         $data = ["table_student" => $table_student];
     return view ('student/index', $data);
     }
@@ -22,7 +22,7 @@ class StudentController extends Controller
         $hours_per_week = $request->input('hours_per_week');
         $grade = $request->input('grade');
 
-    EmployeeModel::insert($name, $hours_per_week, $grade);
+    StudentModel::insert($name, $hours_per_week, $grade);
     return redirect('/student');
     }
 
@@ -43,7 +43,7 @@ class StudentController extends Controller
         $hours_per_week = $request->input('hours_per_week');
         $grade = $request->input('grade');
             
-    EmployeeModel::update_by_id($name, $hours_per_week, $grade);
+    StudentModel::update_by_id($name, $hours_per_week, $grade);
     return redirect('/student');
     }
 }

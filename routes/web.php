@@ -154,3 +154,32 @@ Route::get('/bootstrap', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+/*
+|--------------------------------------------------------------------------
+| Project IMDB
+|--------------------------------------------------------------------------
+*/
+
+Route::get('/imdb', 'IMDBController@index');
+
+Route::get('/imdb/create', 'IMDBController@create');
+
+Route::post('/imdb', 'IMDBController@store');
+
+Route::get('/imdb/{id}', 'IMDBController@show');
+
+Route::get('/imdb/{id}/edit', 'IMDBController@edit');
+
+Route::put('/imdb/{id}', 'IMDBController@update');
+
+Route::delete('/imdb/{id}', 'IMDBController@destroy');
+
+/*
+Route::get('/graphiccard', 'GraphicCardController@index');
+
+Route::get('/graphiccard/create', 'GraphicCardController@create');
+
+Route::post('/graphiccard', 'GraphicCardController@store');
+
+Route::get('/graphiccard/{id}', 'GraphicCardController@show');
